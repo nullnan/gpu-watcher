@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPU Watcher CLI"
+  short_description: "Submit and monitor GPU watcher tasks"
+  default_prompt: "Use $gpu-watcher-cli to submit a GPU task and monitor progress from the command line."

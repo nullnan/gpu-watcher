@@ -1,0 +1,52 @@
+[daemon]
+db_path = "./.local/gpu-watcher.db"
+poll_interval_seconds = 10
+remote_base_dir = "~/.gpu-watcher"
+free_memory_mb = 512
+free_utilization_percent = 10
+
+[api]
+enabled = true
+host = "127.0.0.1"
+port = 8765
+
+[auth]
+enabled = true
+username = "admin"
+# Secrets are read from GPU_WATCHER_PASSWORD_HASH and
+# GPU_WATCHER_SESSION_SECRET.
+secure_cookie = true
+session_ttl_seconds = 43200
+login_max_attempts = 5
+login_window_seconds = 300
+
+[im_notify]
+enabled = false
+api = "http://127.0.0.1:3000"
+# user = 123456
+# group = 123456
+# token = "onebot-access-token"
+timeout_seconds = 5
+
+[[workers]]
+name = "gpu-node-1"
+host = "gpu-node-1.example.com"
+user = "ubuntu"
+port = 22
+ssh_key = "~/.ssh/id_ed25519"
+enabled = true
+tmux_prefix = "gw"
+gpus = [0, 1, 2, 3]
+max_concurrent_tasks = 4
+max_background_tasks = 2
+
+[[workers]]
+name = "gpu-node-2"
+host = "10.0.0.42"
+user = "research"
+port = 22
+enabled = false
+tmux_prefix = "gw"
+gpus = [0, 1]
+max_concurrent_tasks = 2
+max_background_tasks = 1

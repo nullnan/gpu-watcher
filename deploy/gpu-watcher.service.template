@@ -1,0 +1,16 @@
+[Unit]
+Description=gpu-watcher central daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/gpu-watcher
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=%h/.config/gpu-watcher/auth.env
+ExecStart=/opt/gpu-watcher/.venv/bin/gpu-watcher daemon --config /opt/gpu-watcher/.local/config.toml
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

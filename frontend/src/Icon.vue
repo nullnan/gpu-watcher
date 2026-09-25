@@ -1,0 +1,75 @@
+<script setup>
+import {
+  Cpu,
+  Layers,
+  Server,
+  Plus,
+  Search,
+  RefreshCw,
+  ArrowUpRight,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  Pause,
+  Square,
+  Terminal,
+  Sun,
+  Moon,
+  Monitor,
+  Activity,
+  Clock3,
+  CircleCheck,
+  Ellipsis,
+  LogOut,
+  Wallet,
+  SlidersHorizontal,
+  Inbox,
+  X,
+  Command,
+  ShieldCheck,
+  Eye,
+  EyeOff,
+} from "lucide-vue-next";
+defineProps({ name: String, size: { type: Number, default: 18 } });
+const icons = {
+  Cpu,
+  Layers,
+  Server,
+  Plus,
+  Search,
+  RefreshCw,
+  ArrowUpRight,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  Pause,
+  Square,
+  Terminal,
+  Sun,
+  Moon,
+  Monitor,
+  Activity,
+  Clock3,
+  CircleCheck,
+  Ellipsis,
+  LogOut,
+  Wallet,
+  SlidersHorizontal,
+  Inbox,
+  X,
+  Command,
+  ShieldCheck,
+  Eye,
+  EyeOff,
+};
+</script>
+<template>
+  <component
+    :is="icons[name] || icons.Cpu"
+    :size="size"
+    :stroke-width="1.7"
+    aria-hidden="true"
+  />
+</template>

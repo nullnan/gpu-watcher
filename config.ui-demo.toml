@@ -1,0 +1,20 @@
+[daemon]
+db_path = "/tmp/gpu-watcher-ui-demo.db"
+poll_interval_seconds = 5
+remote_base_dir = "~/.gpu-watcher"
+free_memory_mb = 512
+free_utilization_percent = 10
+
+[api]
+enabled = true
+host = "127.0.0.1"
+port = 8765
+
+[[workers]]
+name = "demo-disabled"
+host = "127.0.0.1"
+user = ""
+port = 22
+enabled = false
+tmux_prefix = "gw"
+gpus = [0]

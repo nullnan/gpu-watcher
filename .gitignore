@@ -1,0 +1,38 @@
+# Local runtime configuration and state (may contain credentials and task data)
+.local/
+config.toml
+config.local.toml
+*.local.toml
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Secrets and environment overrides
+.env
+.env.*
+*.env
+!*.env.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Editors and OS files
+.idea/
+.vscode/
+.DS_Store
+*~
